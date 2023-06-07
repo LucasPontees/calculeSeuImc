@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <style>
+        *{ 
+            background-color: whitesmoke;
+        }
+       body{
+        background-color: cornflowerblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+       }
+       #content{
+        padding: 20px;
+        border-radius: 32px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+       }
+       #botao{
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+       }
+       #botao:hover{
+        background-color: cornflowerblue;
+       }
+    </style>
+</head>
+<body>
+    <section id="content"> 
+    <h1>Informe seus dados</h1>
+    <h4>Informe seu peso em Kg</h4>
+    <input type="number" name="pesoKg" id="pesoKg" placeholder="Peso">
+    <h4>Informe sua altura em Metros</h4>
+    <input type="number" name="alturaM" id="alturaM" placeholder="Altura">
+    <input id="botao" type="button" value="Calcule" onclick="calcular()">
+    <div id="res"> Resultado</div>
+</section>
+
+    <script>
+        function calcular(){
+            let peso = window.document.getElementById('pesoKg')
+            let altura = window.document.getElementById('alturaM')
+            let resultado = window.document.getElementById('res')
+
+            let psoKg = Number(peso.value)
+            let altM = Number(altura.value)
+            var calc = psoKg / (altM * altM)
+            res.innerHTML = ` Seu imc é ${calc.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>
